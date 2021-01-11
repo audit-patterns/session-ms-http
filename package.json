@@ -1,0 +1,48 @@
+{
+  "name": "session-ms-http",
+  "version": "1.0.0",
+  "description": "",
+  "author": {
+    "name": "buffolander",
+    "email": "brdu1976@gmail.com"
+  },
+  "keywords": [
+    "boilerplate",
+    "gcp",
+    "google cloud",
+    "cloud run"
+  ],
+  "homepage": "https://github.com/audit-patterns/session-ms-http/src/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:audit-patterns/session-ms-http.git"
+  },
+  "license": "MIT",
+  "private": true,
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest",
+    "lint": "eslint '**/*.js'",
+    "fix-lint": "eslint --fix '**/*.js'"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.18.0",
+    "jest": "^24.7.1"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "^5.7.1",
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "firebase-admin": "^9.4.2"
+  },
+  "defaultDependencies": {
+    "lodash": "^4.17.11",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.31"
+  }
+}
