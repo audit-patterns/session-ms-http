@@ -15,6 +15,8 @@ const newSession = async (id, uid) => {
       ...sessionTemplate,
       id,
       uid,
+      createdAt: new Date(),
+      updatedAt: new Date(),
     }
     await db.collection(sessions).doc(id).set(payload)
     return [payload, null]
@@ -23,6 +25,30 @@ const newSession = async (id, uid) => {
   }
 }
 
+const fetchSession = async (id) => {
+  try {
+    const session = await db.collection(sessions).doc(id).get()
+    const sessionData = session.data()
+    return [sessionData, null]
+  } catch (err) {
+    return [null, err]
+  }
+}
+
+const updateSession = async (id, payload) => {
+  try {
+    await db.collection(sessions).doc(id).update({
+      ...payload,
+      updatedAt: new Date(),
+    })
+    return [true, null]
+  } catch (err) {
+    return [null, err]
+  }
+}
+
 module.exports = {
   newSession,
+  fetchSession,
+  updateSession,
 }

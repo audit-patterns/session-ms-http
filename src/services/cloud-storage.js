@@ -15,7 +15,6 @@ const bucketSetCors = bucketName => storage
     origin: ['*'],
     method: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     responseHeader: [
-      'Content-Type',
       'x-goog-resumable',
       'Access-Control-Allow-Origin',
     ],
